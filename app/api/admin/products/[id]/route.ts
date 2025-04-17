@@ -2,6 +2,11 @@ import { auth } from '@/lib/auth'
 import dbConnect from '@/lib/dbConnect'
 import ProductModel from '@/lib/models/ProductModel'
 
+if (!process.env.MONGODB_URI) {
+  console.error('Missing MONGODB_URI. Skipping DB connection.');
+  throw new Error('MONGODB_URI not set');
+}
+
 export const GET = auth(async (...args: any) => {
   const [req, { params }] = args
   if (!req.auth || !req.auth.user?.isAdmin) {
