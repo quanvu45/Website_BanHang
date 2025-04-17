@@ -101,7 +101,7 @@ const getByQuery = cache(
     })
 
     return {
-      products: products as Product[],
+      products: products as unknown as Product[],
       countProducts,
       page,
       pages: Math.ceil(countProducts / PAGE_SIZE),
