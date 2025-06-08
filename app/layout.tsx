@@ -30,7 +30,7 @@ export default function RootLayout({
                 {children}
                 <footer className="footer footer-center p-4 bg-base-300 text-base-content">
                   <p>
-                    Copyright © 2023 - All right reserved by Next Amazona V2
+                    © {new Date().getFullYear()} Fashion Fiesta. All rights reserved.
                   </p>
                 </footer>
               </div>

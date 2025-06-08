@@ -14,7 +14,7 @@ const Form = () => {
   const { data: session } = useSession()
 
   const params = useSearchParams()
-  let callbackUrl = params.get('callbackUrl') || '/'
+  const callbackUrl = params.get('callbackUrl') || window.location.origin || '/'
   const router = useRouter()
 
   const {
@@ -34,11 +34,13 @@ const Form = () => {
     }
   }, [callbackUrl, params, router, session])
 
+
   const formSubmit: SubmitHandler<Inputs> = async (form) => {
     const { email, password } = form
     signIn('credentials', {
       email,
       password,
+      callbackUrl,
     })
   }
   return (

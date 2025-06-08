@@ -9,7 +9,7 @@ const Header = () => {
       <nav>
         <div className="navbar justify-between bg-base-300">
           <div>
-            <label htmlFor="my-drawer" className="btn btn-square btn-ghost">
+            <label htmlFor="my-drawer" className="btn btn-square btn-ghost text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
